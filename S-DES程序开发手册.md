@@ -3,52 +3,47 @@
 本开发手册提供了一个基于S-DES（Simplified Data Encryption Standard）算法的加解密程序的详细接口文档，能够满足用户对于二进制加解密和ASCLL码字符串加解密等基础需要。以及按照用户需求在已知明密文的前提下暴力破解出密钥等主要功能。
 
 ## 二.接口文档
-1.encryption(int[] plainTxt, int[] K, int round)
+1.int[] decryptBit()
  
-描述：使用S-DES算法加密输入的明文。  
+描述：使用S-DES算法加密输入的明文二进制数字。  
 参数：  
-plainTxt：int[]类型，要加密的明文。  
-k：int[]类型，加密使用的密钥。  
-round：int类型，加密的次数。  
-返回值：int[]类型，加密后的密文数组。  
+input：int[]类型，要加密的明文作为输入。  
+keysGenerator()：获取加密使用的密钥k。    
+返回值output：int[]类型，加密后的密文数组。  
 
-2.decryption(int[] cipherTxt, int[] K, int round)
+2.int[] decryptBit()
 
-描述：使用S-DES算法解密输入的密文。  
+描述：使用S-DES算法解密输入的密文二进制数字。  
 参数：  
-cipherTxt：int[]类型，要加密的明文。  
-k：int[]类型，加密使用的密钥。  
-round：int类型，加密的次数。  
-返回值：int[]类型，解密后的明文数组。  
+input：int[]类型，已加密的密文作为输入。  
+keysGenerator()：获取加密使用的密钥k。    
+返回值output：int[]类型，加密后的明文数组。  
 
-3.Test1  
-描述：Test1类是一个图形用户界面，用于二进制加密和解密文本。  
+3.String encryptASCII() 
+描述：使用S-DES算法加密输入的明文ASCII码。  
+参数：  
+input：int[]类型，要加密的明文作为输入。  
+keysGenerator()：获取加密使用的密钥k。    
+返回值output：int[]类型，加密后的密文字符串。
+
+4.String decryptASCII() 
+描述：使用S-DES算法解密输入的密文ASCII码。  
+参数：  
+input：int[]类型，已加密的密文作为输入。  
+keysGenerator()：获取加密使用的密钥k。    
+返回值output：int[]类型，解密后的明文字符串。
+
+5.public Window()
+描述：Window类是一个图形用户界面，用于二进制加密和解密文本的操作展示。  
 方法：  
-actionPerformed(ActionEvent e)：实现ActionListener接口，处理加密和解密按钮的点击事件。  
-属性：
-txtPlaintext 明文字段文本框  
-txtKey 密钥文本框  
-txtCiphertext 密文文本框  
-btnEncrypt 加密按钮  
-btnDecrypt 解密按钮 
+setLayout();
+setResizable();
+setDefaultCloseOperation();
+setWindow();设置窗口界面大小
+addWindowListener();设置窗口响应功能
+init();设置窗口内部功能按键以及文本框
+setVisible();可视性
 
-4.Test3  
-描述：Test3类是一个图形用户界面，用于ASCLL码加密和解密文本。
-方法：  
-actionPerformed(ActionEvent e)：实现ActionListener接口，处理加密和解密按钮的点击事件
-属性：
-txtPlaintext 明文字段文本框  
-txtKey 密钥文本框  
-txtCiphertext 密文文本框  
-btnEncrypt 加密按钮  
-btnDecrypt 解密按钮 
-
-5.Test4.main(String[] args)
-描述：Test4类是一个图形用户界面，用于暴力测试破解密钥。
-参数：args数组，命令行参数。
-返回值：无返回值。
-输入：从命令行读取要破解的明密文对数量。
-输出：输出找到的秘钥和破解时间（如果找到了秘钥）。
 
 ## 三.程序过程详解
 1.初始置换（IP）: 使用初始置换表（IP）对输入的8位明文进行置换，得到置换后的8位序列。
@@ -97,11 +92,7 @@ btnDecrypt 解密按钮
 ## 四.注意事项：
 1.该代码使用的是SDES算法，密钥长度为10位，明文和密文长度为8位。  
 2.在破解过程中，程序会尝试1024个可能的密钥，因此破解时间可能会很长。  
-3.程序中使用了Scanner类来读取用户输入，因此需要确保输入的格式正确。  
-4.程序中使用了ArrayList类来存储明文和密文对，因此需要确保输入的数量正确。  
-5.程序中使用了SDES类来实现加密和解密，因此需要确保该类的实现正确。  
-6.程序中使用了long类型来存储时间，因此需要确保时间的单位正确。  
-7.程序中使用了System.nanoTime()方法来获取时间，因此需要确保系统时间的准确性。  
+3.程序中使用了报错机制，当输入信息不合理时会进行报错并停止计算。
 
 ## 五.结束语
-本用户指南提供了有关S-DES相关算法程序的使用手册。需要注意的是，如果想要加密敏感性的文件数据，请谨慎使用该算法。如果您有更多的加密需求，请联系专业人士而非使用该算法进行加密。
+本用户指南提供了有关S-DES相关算法程序的使用手册。需要注意的是，如果想要加密敏感性的文件数据，或者加密信息更加复杂，受限于逻辑较为简单和编码的局限性，请谨慎使用该算法。
