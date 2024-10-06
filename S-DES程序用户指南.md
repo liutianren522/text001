@@ -1,6 +1,6 @@
 # S-DES程序用户指南
 ## 一.简介
-S-DES（Simplified Data Encryption Standard）是一种简化版的数据加密算法标准，适用于小规模的数据加密需求。本用户指南提供了一个基于《信息安全导论》课程第五讲内容实现的S-DES算法加密解密程序。
+S-DES（Simplified Data Encryption Standard）是一种简化版的数据加密算法标准，适用于小规模的数据加密需求。本用户指南提供了一个基于S-DES算法加密解密程序。
 
 ## 二.功能描述
 
@@ -27,7 +27,7 @@ S-DES（Simplified Data Encryption Standard）是一种简化版的数据加密�
 2.通过提示输入符合要求的二进制数明文，密文，密钥。
 
 3.点击加密（或解密）按钮获取加密（或解密）后的密文（或明文）。
-
+     
 4.点击Test3文件进入加解密UI通过ASCLL码进行同样的操作
 
 3.2破解密钥操作
