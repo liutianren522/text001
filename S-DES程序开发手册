@@ -4,7 +4,7 @@
 
 ## 二.接口文档
 1.encryption(int[] plainTxt, int[] K, int round)
-
+ 
 描述：使用S-DES算法加密输入的明文。  
 参数：  
 plainTxt：int[]类型，要加密的明文。  
