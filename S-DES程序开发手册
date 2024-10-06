@@ -1,6 +1,6 @@
 # S-DES程序开发手册
 ## 一.简介
-本开发手册提供了一个基于S-DES（Simplified Data Encryption Standard）算法的加解密程序的详细接口文档，用于对简单、规模小的数据进行加密、解密与破解操作。
+本开发手册提供了一个基于S-DES（Simplified Data Encryption Standard）算法的加解密程序的详细接口文档，能够满足用户对于二进制加解密和ASCLL码字符串加解密等基础需要。以及按照用户需求在已知明密文的前提下暴力破解出密钥等主要功能。
 
 ## 二.接口文档
 1.encryption(int[] plainTxt, int[] K, int round)
