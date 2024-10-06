@@ -22,7 +22,13 @@
 
 3.1加解密操作
 
-1.运行Main即可展示加加密UI界面。
+1.运行Main即可展示加加密UI界面，Main为如下。
+public class Main {
+    public static void main(String[] args) {
+        Cracker cracker=new Cracker();
+        Window window=new Window();
+    }
+}
 
 2.通过提示输入符合要求的二进制数明文，密钥。
 
@@ -33,6 +39,13 @@
 3.2破解密钥操作
 
 1.运行Main文件。
+public class Main {
+    public static void main(String[] args) {
+        Cracker cracker=new Cracker();
+        cracker.crack();
+        Window window=new Window();
+    }
+}
 
 2.在终端输入你想要破解的明密文对数量以及相应的明密文对。
 
@@ -42,7 +55,14 @@ tip：输入多对明密文对可能没有相应的密钥。
 
 3.3封闭测试
 
-1.运行Main文件。
+1.运行Main文件，修改为如下。
+public class Main {
+    public static void main(String[] args) {
+        Cracker cracker=new Cracker();
+        cracker.closedTest();
+        Window window=new Window();
+    }
+}
 
 2.在终端输入对应的明密文对。
 
@@ -56,4 +76,4 @@ tip：输入多对明密文对可能没有相应的密钥。
 字符文本：字符文本需要保证输入的文本符合ASCⅡ码规定。
 
 ## 五.安全性
-S-DES算法作为一个简单的加密算法，注定不适用于现在的安全通信。由于其密钥空间相对较小，容易受到暴力破解等威胁。可以注意到，此应用程序中也给出了暴力破解的相关代码。因此，SDES代码并不适用于保护安全数据。
+S-DES算法作为一个简单的加密算法，注定不适用于现在的安全通信。由于其密钥空间相对较小，容易受到暴力破解等威胁。可以注意到，此应用程序中也给出了暴力破解的相关代码。因此，SDES代码并不适用于保护安全数据。此外，当信息输入不符合标准，如bit长度不正确时，系统会显示输入信息有误并进行报错。
