@@ -20,7 +20,7 @@
 
 ## 三.使用方法
 
-3.1加解密操作
+### 3.1加解密操作
 
 1.运行Main即可展示加加密UI界面，Main为如下。
 public class Main {
@@ -36,7 +36,7 @@ public class Main {
      
 4.加解密UI通过ASCLL码进行同样的操作
 
-3.2破解密钥操作
+### 3.2破解密钥操作
 
 1.运行Main文件。
 public class Main {
@@ -53,20 +53,28 @@ public class Main {
 
 tip：输入多对明密文对可能没有相应的密钥。
 
-3.3封闭测试
-
+### 3.3封闭测试
 1.运行Main文件，修改为如下。
+
+public class Main {
+    public static void main(String[] args) {
+        Cracker cracker=new Cracker();
+        cracker.crack();
+    }
+}
+
+2.显示栏内输入随机选择的一对明密文信息，等待密钥计算结果。
+
+3.运行Main文件，修改为如下。
+
 public class Main {
     public static void main(String[] args) {
         Cracker cracker=new Cracker();
         cracker.closedTest();
-        Window window=new Window();
     }
 }
 
-2.在终端输入对应的明密文对。
-
-3.可能得到多个破解的密钥。
+4.等待是否存在仅有一个密钥的密文对数
 
 ## 四.加解密参数
 密钥：S-DES算法使用一个10位二进制密钥。请确保输入正确的密钥以保证加密解密的一致性。
