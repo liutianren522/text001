@@ -61,7 +61,12 @@
 ![屏幕截图 2024-10-07 150253](https://github.com/user-attachments/assets/8c469c93-dca2-4693-80ca-c1fc5a24fa4f)
 
 从结果可知，随机一个明密文对可能不止一个密钥key。
-为了确保该结论的普遍性，我们设计出穷举排查法的函数，来统计是否存在仅有一个密钥的密文对数，测试结果如下：
+为了确保该结论的普遍性，我们设计出穷举排查法的函数：
+if (Arrays.equals(ciphertext, tmptCiphertext)) {
+                        ++flag;
+                    }.
+                    
+可以来统计是否存在仅有一个密钥的密文对数，测试结果如下：
 
 ![屏幕截图 2024-10-07 151622](https://github.com/user-attachments/assets/254410de-a4bf-4b6c-b4d0-aa77f92abadb)
 
