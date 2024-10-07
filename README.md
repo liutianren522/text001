@@ -62,6 +62,7 @@
 
 从结果可知，随机一个明密文对可能不止一个密钥key。
 为了确保该结论的普遍性，我们设计出穷举排查法的函数：
+
 if (Arrays.equals(ciphertext, tmptCiphertext)) {
                         ++flag;
                     }.
